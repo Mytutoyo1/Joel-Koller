@@ -53,25 +53,26 @@ const HeroSection = () => {
         <ContactButton />
       </div>
 
-      <div className='mt-10'>
-        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          Ich unterstütze Startups, Fachkräfte und Projekte dabei, ihre Ziele zu erreichen! Mit massgeschneidertem Design, Entwicklung, <br /> Content Erstellung sowie umfassender Beratung.
-        </p>
-      </div>
+      <div className='mt-10 flex flex-col md:flex-row items-center justify-between gap-10'>
+  <div className='flex-1 max-w-xl'>
+    <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base">
+      Ich unterstütze Startups, Fachkräfte und Projekte dabei, ihre Ziele zu erreichen! Mit massgeschneidertem Design, Entwicklung, <br /> Content Erstellung sowie umfassender Beratung.
+    </p>
+  </div>
 
-      <div className='col-span-5 mt-10 flex justify-end items-end'>
-        <div className='w-80 h-90'>  {/* Kleinere Größe */}
-          <Image
-            src={myImage}
-            alt="ME"
-            layout="responsive"
-            objectFit="cover"
-            width={60}
-            height={160}
-            className="rounded-full"
-          />
-        </div>
-      </div>
+  <div className='relative w-[300px] h-[300px] md:w-[300px] md:h-[300px] overflow-hidden rounded-full'>  
+    <Image
+      src={myImage}
+      alt="ME"
+      fill
+      sizes="(max-width: 768px) 300px, 600px"
+      priority
+      className="object-cover"
+      quality={75}
+      unoptimized={false}
+    />
+  </div>
+</div>
 
       {/* Produkt-Sektion mit angepasster Breite und Styling */}
       <div className="mt-50 pt-12">

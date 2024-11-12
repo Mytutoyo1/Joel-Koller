@@ -3,7 +3,7 @@ import React from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import ContactButton from '@/components/ui/contact-button'
 import Image from 'next/image';
-import myImage from '../pictures/DSC00479.JPG'
+import myImage from '../pictures/DSC00479.jpg'
 
 
 const HeroSection = () => {

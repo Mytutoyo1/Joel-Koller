@@ -39,10 +39,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     >
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
         <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-        Der Weg in die Selbstständigkeit bringt Herausforderungen und Chancen. 
+        Ihre Zeit ist zu wertvoll für monotone Aufgaben - Automatisieren Sie den Alltag, fokussieren Sie sich aufs Wesentliche.
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-        Hier erfahren Sie mehr über meinen beruflichen Werdegang und die Erfahrungen, die mich geprägt haben.
+        Mit intelligenter Automatisierung und strategischer Beratung begleite ich Sie auf dem Weg zu mehr Effizienz und digitalem Wachstum.
         </p>
       </div>
 

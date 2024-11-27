@@ -8,6 +8,7 @@ import { BentoGridThirdDemo } from './components/grid';
 import { FloatingNavDemo } from './components/Navbar'
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import { TimelineDemo } from '@/app/components/timeline_CV' 
+import { ExpandableCardDemo } from '@/app/components/spotifyGrid'
 
 
 
@@ -35,6 +36,7 @@ export default function Home() {
           <HeroSection />
           <BentoGridThirdDemo></BentoGridThirdDemo>
           <TimelineDemo></TimelineDemo>
+          <ExpandableCardDemo></ExpandableCardDemo>
 
         </main>
       </div>

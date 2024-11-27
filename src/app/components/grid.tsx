@@ -1,34 +1,137 @@
 "use client";
 import { cn } from "@/lib/utils";
-import React from "react";
-import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+import React, { useState, useId, useRef, useEffect } from "react";
+import { BentoGrid, } from "@/components/ui/bento-grid";
 import {
   IconBoxAlignRightFilled,
   IconClipboardCopy,
   IconFileBroken,
-  IconSignature,
   IconTableColumn,
 } from "@tabler/icons-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ThreeDCardDemo } from '@/app/components/3D_cart'
+import { ThreeDCardDemo } from '@/app/components/3D_cart';
+import { useOutsideClick } from "@/components/ui/ues-outside-clicks";
+
+interface BentoGridItemProps {
+  className?: string;
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  header?: React.ReactNode;
+  icon?: React.ReactNode;
+  onClick?: () => void;
+}
+
+export function BentoGridItem({ 
+  title, 
+  description, 
+  header, 
+  className, 
+  icon,
+  onClick 
+}: BentoGridItemProps) {
+  return (
+    <div 
+      className={cn(
+        "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
+        className
+      )}
+      onClick={onClick}
+    >
+      {header}
+      <div className="group-hover/bento:translate-x-2 transition duration-200">
+        {icon}
+        <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
+          {title}
+        </div>
+        <div className="font-sans text-neutral-600 text-xs dark:text-neutral-300">
+          {description}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 
 export function BentoGridThirdDemo() {
+  const [active, setActive] = useState<(typeof items)[number] | null>(null);
+  const id = useId();
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setActive(null);
+      }
+    }
+
+    if (active) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [active]);
+
+  useOutsideClick(ref, () => setActive(null));
+
   return (
-    <div className="container mx-auto">
-    <BentoGrid className="max-w-12xl md:auto-rows-[30rem] mt-4 ml-auto ">
-      {items.map((item, i) => (
-        <BentoGridItem
-          key={i}
-          title={item.title}
-          description={item.description}
-          header={item.header}
-          className={cn("[&>p:text-lg] dark:bg-[#134237]", item.className)}
-          icon={item.icon}
-        />
-      ))}
-    </BentoGrid>
-    </div>
+    <>
+      <AnimatePresence>
+        {active && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/20 h-full w-full z-10"
+            onClick={() => setActive(null)}
+          />
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {active && (
+          <div className="fixed inset-0 grid place-items-center z-[100]">
+            <motion.div
+              ref={ref}
+              layoutId={`card-${active.title}-${id}`}
+              className="w-full max-w-[600px] h-fit max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 rounded-xl overflow-hidden"
+            >
+              <div className="p-6">
+                <h2 className="text-2xl font-bold mb-4">{active.title}</h2>
+                <div className="text-neutral-600 dark:text-green-400">
+                  {active.description}
+                </div>
+                
+                {active.expandedContent && (
+                  <div className="mt-4">
+                    {active.expandedContent()}
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      <div className="container mx-auto">
+        <BentoGrid className="max-w-12xl md:auto-rows-[30rem] mt-4 ml-auto">
+          {items.map((item, i) => (
+            <BentoGridItem
+              key={i}
+              title={item.title}
+              description={item.description}
+              header={item.header}
+              className={cn("[&>p:text-lg] dark:bg-[#134237]", item.className)}
+              icon={item.icon}
+              onClick={() => setActive(item)}
+            />
+          ))}
+        </BentoGrid>
+      </div>
+    </>
   );
 }
 
@@ -307,7 +410,26 @@ const items = [
     ),
     header: <SkeletonOne />,
     className: "md:col-span-1",
-    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
+    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,   
+    expandedContent: () => (
+      <div>
+        <p>
+          KI Chatbots revolutionieren die Unternehmenskommunikation durch fortschrittliche, maßgeschneiderte Lösungen. 
+          Unsere intelligenten Chatbots sind darauf ausgelegt, Kundenanfragen präzise und effizient zu beantworten, 
+          während sie gleichzeitig ein nahtloses und personalisiertes Benutzererlebnis bieten.
+        </p>
+        <br />
+        <p>
+          Durch den Einsatz von fortschrittlichen Algorithmen und maschinellem Lernen können unsere KI-Chatbots:
+        </p>
+        <ul className="list-disc pl-5 mt-2">
+          <li>Kundenanfragen in Echtzeit beantworten</li>
+          <li>Komplexe Prozesse automatisieren</li>
+          <li>Personalisierte Empfehlungen geben</li>
+          <li>Die Kundenzufriedenheit steigern</li>
+        </ul>
+      </div>
+    )
   },
   {
     title: "Automatische Dokumentenkorrektur",

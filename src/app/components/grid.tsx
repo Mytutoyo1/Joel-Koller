@@ -52,7 +52,6 @@ export function BentoGridItem({
   );
 }
 
-
 export function BentoGridThirdDemo() {
   const [active, setActive] = useState<(typeof items)[number] | null>(null);
   const id = useId();
@@ -80,7 +79,7 @@ export function BentoGridThirdDemo() {
   return (
     <>
       <AnimatePresence>
-        {active && (
+        {active && active.title && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -92,7 +91,7 @@ export function BentoGridThirdDemo() {
       </AnimatePresence>
 
       <AnimatePresence>
-        {active && (
+        {active && active.title && (
           <div className="fixed inset-0 grid place-items-center z-[100]">
             <motion.div
               ref={ref}
@@ -126,7 +125,7 @@ export function BentoGridThirdDemo() {
               header={item.header}
               className={cn("[&>p:text-lg] dark:bg-[#134237]", item.className)}
               icon={item.icon}
-              onClick={() => setActive(item)}
+              onClick={item.title ? () => setActive(item) : undefined}
             />
           ))}
         </BentoGrid>
@@ -134,6 +133,7 @@ export function BentoGridThirdDemo() {
     </>
   );
 }
+
 
 const SkeletonOne = () => {
   const variants = {
@@ -260,6 +260,7 @@ const SkeletonThree = () => {
     </motion.div>
   );
 };
+
 const SkeletonFour = () => {
   const first = {
     initial: {
@@ -400,6 +401,7 @@ const SkeletonFive = () => {
     </motion.div>
   );
 };
+
 const items = [
   {
     title: "KI Chatbots",
@@ -443,9 +445,7 @@ const items = [
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
   {
-    
     header: <ThreeDCardDemo />,
-   
   },
   {
     title: "GMP enviroment made Easy!",
@@ -458,7 +458,6 @@ const items = [
     className: "md:col-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },
-
   {
     title: "Text Summarization",
     description: (

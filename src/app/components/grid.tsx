@@ -22,16 +22,16 @@ interface BentoGridItemProps {
   onClick?: () => void;
 }
 
-export function BentoGridItem({ 
-  title, 
-  description, 
-  header, 
-  className, 
+export function BentoGridItem({
+  title,
+  description,
+  header,
+  className,
   icon,
-  onClick 
+  onClick
 }: BentoGridItemProps) {
   return (
-    <div 
+    <div
       className={cn(
         "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
         className
@@ -103,7 +103,7 @@ export function BentoGridThirdDemo() {
                 <div className="text-neutral-600 dark:text-green-400">
                   {active.description}
                 </div>
-                
+
                 {active.expandedContent && (
                   <div className="mt-4">
                     {active.expandedContent()}
@@ -301,7 +301,7 @@ const SkeletonFour = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Operational Qualification 
+          Operational Qualification
         </p>
         <p className="border border-red-500 bg-red-100 dark:bg-red-900/20 text-red-600 text-xs rounded-full px-2 py-0.5 mt-4">
           DQ,IQ,OQ
@@ -316,7 +316,7 @@ const SkeletonFour = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Performance Qualification 
+          Performance Qualification
         </p>
         <p className="border border-green-500 bg-green-100 dark:bg-green-900/20 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4">
           PQ
@@ -337,7 +337,7 @@ const SkeletonFour = () => {
           Validation Reports
         </p>
         <p className="border border-orange-500 bg-orange-100 dark:bg-orange-900/20 text-orange-600 text-xs rounded-full px-2 py-0.5 mt-4">
-        VB
+          VB
         </p>
       </motion.div>
     </motion.div>
@@ -387,8 +387,8 @@ const SkeletonFive = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="text-xs text-neutral-500">
-        Heutzutage ist es wichtig, in eine Vielzahl von digitalen Marketingstrategien zu investieren, einschließlich SEO,
-         Content-Marketing, Social Media und E-Mail-Marketing, um eine breite Zielgruppe zu erreichen...
+          Heutzutage ist es wichtig, in eine Vielzahl von digitalen Marketingstrategien zu investieren, einschließlich SEO,
+          Content-Marketing, Social Media und E-Mail-Marketing, um eine breite Zielgruppe zu erreichen...
         </p>
       </motion.div>
       <motion.div
@@ -412,12 +412,12 @@ const items = [
     ),
     header: <SkeletonOne />,
     className: "md:col-span-1",
-    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,   
+    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
     expandedContent: () => (
       <div>
         <p>
-          KI Chatbots revolutionieren die Unternehmenskommunikation durch fortschrittliche, maßgeschneiderte Lösungen. 
-          Unsere intelligenten Chatbots sind darauf ausgelegt, Kundenanfragen präzise und effizient zu beantworten, 
+          KI Chatbots revolutionieren die Unternehmenskommunikation durch fortschrittliche, maßgeschneiderte Lösungen.
+          Unsere intelligenten Chatbots sind darauf ausgelegt, Kundenanfragen präzise und effizient zu beantworten,
           während sie gleichzeitig ein nahtloses und personalisiertes Benutzererlebnis bieten.
         </p>
         <br />
@@ -437,12 +437,32 @@ const items = [
     title: "Automatische Dokumentenkorrektur",
     description: (
       <span className="text-sm">
-        Perfekte Dokumente - automatisch, präzise, fehlerfrei.
+        Perfekte Dokumente - die Grundlage für Ihren Erfolg von morgen.
       </span>
     ),
     header: <SkeletonTwo />,
     className: "md:col-span-1",
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
+    expandedContent: () => (
+      <div>
+        <p>
+          Automatische Dokumentenkorrektur revolutioniert die Textbearbeitung durch fortschrittliche,
+          maßgeschneiderte Lösungen. Unsere intelligenten Systeme sind darauf ausgelegt,
+          Rechtschreib-, Grammatik- und Stilfehler präzise und effizient zu erkennen und zu korrigieren,
+          während sie gleichzeitig ein nahtloses und personalisiertes Bearbeitungserlebnis bieten.
+        </p>
+        <br />
+        <p>
+          Durch den Einsatz fortschrittlicher Algorithmen und maschinellen Lernens kann unsere automatische Dokumentenkorrektur:
+        </p>
+        <ul className="list-disc pl-5 mt-2">
+          <li>Fehler in Echtzeit erkennen und korrigieren </li>
+          <li>Die Bearbeitungszeit drastisch reduzieren</li>
+          <li>Stil und Ton anpassen, um Ihre Zielgruppe optimal anzusprechen</li>
+          <li>Die Qualität und Professionalität Ihrer Dokumente steigern</li>
+        </ul>
+      </div>
+    )
   },
   {
     header: <ThreeDCardDemo />,
@@ -457,6 +477,26 @@ const items = [
     header: <SkeletonFour />,
     className: "md:col-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+    expandedContent: () => (
+      <div>
+        <p>
+          GMP-Umgebungen werden durch automatisierte Workflows revolutioniert.
+          Unsere massgeschneiderten Lösungen vereinfachen die GMP-Dokumentation effizient und helfen Ihnen,
+          wertvolle Zeit einzusparen, ohne dabei Kompromisse bei Qualität und Compliance einzugehen.
+        </p>
+        <br />
+        <p>
+          Durch den Einsatz fortschrittlicher Technologien und intelligenter Prozessautomatisierung kann unser System:
+        </p>
+        <ul className="list-disc pl-5 mt-2">
+          <li>Bestehende GMP-Dokumentvorlagen benutzen und erweitern</li>
+          <li>Komplexe Dokumentationsprozesse automatisieren</li>
+          <li>Fehler minimieren und die Einhaltung regulatorischer Standards sicherstellen</li>
+          <li>Ihre Teams entlasten und die Produktivität steigern</li>
+        </ul>
+      </div>
+
+    )
   },
   {
     title: "Text Summarization",
@@ -468,5 +508,26 @@ const items = [
     header: <SkeletonFive />,
     className: "md:col-span-1",
     icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
+    expandedContent: () => (
+      <div>
+        <p>
+          Textzusammenfassungen revolutionieren die Art und Weise, wie wir Informationen verarbeiten.
+          Unsere maßgeschneiderten Lösungen bieten präzise und effiziente Zusammenfassungen,
+          damit Sie schneller auf den Punkt kommen und fundierte Entscheidungen treffen können.
+        </p>
+        <br />
+        <p>
+          Durch den Einsatz fortschrittlicher Algorithmen und maschinellen Lernens kann unsere Textzusammenfassung:
+        </p>
+        <ul className="list-disc pl-5 mt-2">
+          <li>Lange Texte in prägnante Kernaussagen destillieren</li>
+          <li>Relevante Informationen in Sekunden identifizieren</li>
+          <li>Den Zeitaufwand für das Lesen umfangreicher Inhalte reduzieren</li>
+          <li>Die Effizienz bei der Informationsverarbeitung steigern</li>
+        </ul>
+      </div>
+
+
+    )
   },
 ];

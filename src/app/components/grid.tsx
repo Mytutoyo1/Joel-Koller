@@ -282,6 +282,8 @@ const SkeletonFour = () => {
       rotate: 0,
     },
   };
+
+  
   return (
     <motion.div
       initial="initial"
@@ -293,13 +295,9 @@ const SkeletonFour = () => {
         variants={first}
         className="h-full w-1/3 rounded-2xl bg-gray-100 p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
       >
-        <Image
-          src=""
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
+        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-red-400 to-red-600 shadow-lg flex items-center justify-center">
+          <span className="text-white text-xs font-semibold">OQ</span>
+        </div>
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
           Operational Qualification
         </p>
@@ -307,14 +305,12 @@ const SkeletonFour = () => {
           DQ,IQ,OQ
         </p>
       </motion.div>
-      <motion.div className="h-full relative z-20 w-1/3 rounded-2xl bg-gray-100 p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
-        <Image
-          src=""
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
+      <motion.div 
+        className="h-full relative z-20 w-1/3 rounded-2xl bg-gray-100 p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
+      >
+        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-green-400 to-green-600 shadow-lg flex items-center justify-center">
+          <span className="text-white text-xs font-semibold">PQ</span>
+        </div>
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
           Performance Qualification
         </p>
@@ -326,13 +322,9 @@ const SkeletonFour = () => {
         variants={second}
         className="h-full w-1/3 rounded-2xl bg-gray-100 p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
       >
-        <Image
-          src=""
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
+        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 shadow-lg flex items-center justify-center">
+          <span className="text-white text-xs font-semibold">VB</span>
+        </div>
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
           Validation Reports
         </p>

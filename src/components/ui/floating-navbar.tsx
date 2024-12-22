@@ -21,11 +21,9 @@ export const FloatingNav = ({
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
-
   const [visible, setVisible] = useState(false);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
     if (typeof current === "number") {
       let direction = current! - scrollYProgress.getPrevious()!;
 
@@ -40,6 +38,16 @@ export const FloatingNav = ({
       }
     }
   });
+
+  const scrollToSignupForm = () => {
+    const signupForm = document.querySelector('#signup-form')
+    if (signupForm) {
+      signupForm.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  }
 
   return (
     <AnimatePresence mode="wait">
@@ -72,7 +80,10 @@ export const FloatingNav = ({
             <span className="hidden sm:block text-sm">{navItem.name}</span>
           </Link>
         ))}
-        <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] bg-[#ec4899] text-white dark:text-white px-4 py-2 rounded-full">
+        <button 
+          onClick={scrollToSignupForm}
+          className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] bg-[#ec4899] text-white dark:text-white px-4 py-2 rounded-full hover:bg-[#d14783] transition-colors duration-200"
+        >
           <span>Contact!</span>
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
         </button>

@@ -26,7 +26,7 @@ export function SignupFormDemo() {
 
         try {
             // Construct the mailto link
-            const mailtoLink = `mailto:mmhh77@gmx.ch?subject=Neue%20Nachricht%20von%20${encodeURIComponent(firstName)}%20${encodeURIComponent(lastName)}&body=${encodeURIComponent(`
+            const mailtoLink = `mailto:mmhh00@gmx.ch?subject=Neue%20Nachricht%20von%20${encodeURIComponent(firstName)}%20${encodeURIComponent(lastName)}&body=${encodeURIComponent(`
 Vorname: ${firstName}
 Nachname: ${lastName}
 Email: ${email}

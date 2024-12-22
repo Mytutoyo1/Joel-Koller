@@ -15,8 +15,9 @@ const HeroSection = () => {
         <div className="lg:col-span-7">
           <h1 className="text-white mb-4 text-4xl lg:text-6xl font-extrabold tracking-tighter sm:text-5xl xl:text-6xl/none">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#4b6788] to-[#4b6788] dark:from-white dark:to-[#f8ca15] transition-colors duration-100">
-              Hello, I'm{" "}
+              Hello, I&apos;m{" "}
             </span>
+
           </h1>
           <h1 className="text-white mb-4 text-4xl lg:text-6xl font-extrabold tracking-tighter sm:text-5xl xl:text-6xl/none">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#f9bc3c] to-[#f9bc3c] dark:from-white dark:to-[#f8ca15] transition-colors duration-100">
@@ -54,25 +55,25 @@ const HeroSection = () => {
       </div>
 
       <div className='mt-10 flex flex-col md:flex-row items-center justify-between gap-10'>
-  <div className='flex-1 max-w-xl'>
-    <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base">
-      Ich unterstütze Startups, Fachkräfte und Projekte dabei, ihre Ziele zu erreichen! Mit massgeschneidertem Design, Entwicklung, <br /> Content Erstellung sowie umfassender Beratung.
-    </p>
-  </div>
+        <div className='flex-1 max-w-xl'>
+          <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base">
+            Ich unterstütze Startups, Fachkräfte und Projekte dabei, ihre Ziele zu erreichen! Mit massgeschneidertem Design, Entwicklung, <br /> Content Erstellung sowie umfassender Beratung.
+          </p>
+        </div>
 
-  <div className='relative w-[300px] h-[300px] md:w-[300px] md:h-[300px] overflow-hidden rounded-full'>  
-    <Image
-      src={myImage}
-      alt="ME"
-      fill
-      sizes="(max-width: 768px) 300px, 600px"
-      priority
-      className="object-cover"
-      quality={75}
-      unoptimized={false}
-    />
-  </div>
-</div>
+        <div className='relative w-[300px] h-[300px] md:w-[300px] md:h-[300px] overflow-hidden rounded-full'>
+          <Image
+            src={myImage}
+            alt="ME"
+            fill
+            sizes="(max-width: 768px) 300px, 600px"
+            priority
+            className="object-cover"
+            quality={75}
+            unoptimized={false}
+          />
+        </div>
+      </div>
 
       {/* Produkt-Sektion mit angepasster Breite und Styling */}
       <div className="mt-50 pt-12">

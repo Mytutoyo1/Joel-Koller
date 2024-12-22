@@ -1,12 +1,11 @@
 "use client"
-import Link from 'next/link'
 import { ThemeProvider } from 'next-themes'
-import Image from "next/image";
+
 import HeroSection from "./components/HeroSection"
 import { ModeToggle } from "./components/ModeToggle"
 import { BentoGridThirdDemo } from './components/grid';
 import { FloatingNavDemo } from './components/Navbar'
-import { BackgroundBeams } from '@/components/ui/background-beams';
+
 import { TimelineDemo } from '@/app/components/timeline_CV' 
 import {SignupFormDemo} from '@/app/components/SignUpForm'
 

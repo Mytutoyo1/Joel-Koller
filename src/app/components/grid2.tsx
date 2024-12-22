@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+
 import React from "react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid"
 import {
@@ -7,8 +7,7 @@ import {
   IconSignature,
   IconTableColumn,
 } from "@tabler/icons-react";
-import { Component } from "lucide-react";
-import { div } from "framer-motion/client";
+
 
 export function BentoGridSecondDemo() {
   return (

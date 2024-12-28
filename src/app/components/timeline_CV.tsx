@@ -100,10 +100,10 @@ export function TimelineDemo() {
                             ✅ kostenlose Ideen-Validierung
                         </div>
                         <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-                            ✅ Unverbindliches erstgespräch
+                            ✅ Unverbindliches Erstgespräch
                         </div>
                         <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-                            ✅ Besprechung eines Use-Casees
+                            ✅ Besprechung eines ersten Use-Case
                         </div>
                         <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
                             ✅ Systemintegrations-Check

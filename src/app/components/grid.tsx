@@ -397,10 +397,10 @@ const items = [
     )
   },
   {
-    title: "Automatische Dokumentenkorrektur",
+    title: "Daten Processing, ready for RAG",
     description: (
       <span className="text-sm">
-        Perfekte Dokumente - die Grundlage für Ihren Erfolg von morgen.
+        Eigene Daten richtig nutzen: Der Schlüssel zu präziser KI-Suche
       </span>
     ),
     header: <SkeletonTwo />,
@@ -409,19 +409,18 @@ const items = [
     expandedContent: () => (
       <div>
         <p>
-          Automatische Dokumentenkorrektur revolutioniert die Textbearbeitung durch fortschrittliche,
-          maßgeschneiderte Lösungen. Unsere intelligenten Systeme sind darauf ausgelegt,
-          Rechtschreib-, Grammatik- und Stilfehler präzise und effizient zu erkennen und zu korrigieren,
-          während sie gleichzeitig ein nahtloses und personalisiertes Bearbeitungserlebnis bieten.
+        RAG (Retrieval-Augmented Generation) liefert nur dann präzise und relevante Antworten, wenn die zugrunde liegenden Daten korrekt verarbeitet sind. 
+        Unser Data Processing Service für RAG sorgt dafür, dass deine Daten effizient strukturiert, bereinigt und optimiert werden –
+        für bessere Suchergebnisse, fundiertere Entscheidungen und eine leistungsstärkere KI.
         </p>
         <br />
         <p>
           Durch den Einsatz fortschrittlicher Algorithmen und maschinellen Lernens kann unsere automatische Dokumentenkorrektur:
         </p>
         <ul className="list-disc pl-5 mt-2">
-          <li>Fehler in Echtzeit erkennen und korrigieren </li>
-          <li>Die Bearbeitungszeit drastisch reduzieren</li>
-          <li>Stil und Ton anpassen, um Ihre Zielgruppe optimal anzusprechen</li>
+          <li>Genaue und relevante Antworten dank optimierter Date </li>
+          <li>Effiziente Verarbeitung für schnellere und präzisere Ergebnisse</li>
+          <li>Maßgeschneiderte Lösungen für deine individuellen Datenanforderungen</li>
           <li>Die Qualität und Professionalität Ihrer Dokumente steigern</li>
         </ul>
       </div>

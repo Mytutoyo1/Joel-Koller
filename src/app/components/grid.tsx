@@ -397,7 +397,7 @@ const items = [
     )
   },
   {
-    title: "Daten Processing, ready for RAG",
+    title: "Data Processing, ready for RAG",
     description: (
       <span className="text-sm">
         Eigene Daten richtig nutzen: Der Schlüssel zu präziser KI-Suche
@@ -418,7 +418,7 @@ const items = [
           Durch den Einsatz fortschrittlicher Algorithmen und maschinellen Lernens kann unsere automatische Dokumentenkorrektur:
         </p>
         <ul className="list-disc pl-5 mt-2">
-          <li>Genaue und relevante Antworten dank optimierter Date </li>
+          <li>Genaue und relevante Antworten dank optimierter Daten </li>
           <li>Effiziente Verarbeitung für schnellere und präzisere Ergebnisse</li>
           <li>Maßgeschneiderte Lösungen für deine individuellen Datenanforderungen</li>
           <li>Die Qualität und Professionalität Ihrer Dokumente steigern</li>
